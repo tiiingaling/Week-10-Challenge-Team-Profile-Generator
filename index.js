@@ -1,31 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-function addEmployee() {
-  inquirer.prompt ([
-  {
-    type: 'input',
-    name: 'nameEmployee',
-    message: 'What is the name of the employee?'
-  },
-  {
-    type: 'input',
-    name: 'idEmployee',
-    message: `What is the employee's id number?`,
-  },
-  {
-    type: 'input',
-    name: 'idEmployee',
-    message: "What is the employee's id number?",
-  },
-  {
-    type: 'input',
-    name: 'emailEmployee',
-    message: "What is the employee's email address?",
-  },
-])
-}
-
 function addManager() {
   inquirer.prompt ([
   {
