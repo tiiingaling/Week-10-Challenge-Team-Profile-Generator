@@ -55,7 +55,7 @@ function addEngineer() {
   },
   {
     type: 'input',
-    name: 'emailEngineer',
+    name: 'github',
     message: "What is the engineer's GitHub username?",
   },
 ])
