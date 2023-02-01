@@ -5,27 +5,22 @@ function addManager() {
   inquirer.prompt ([
   {
     type: 'input',
-    name: 'nameManager',
+    name: 'name',
     message: 'What is the name of the manager?'
   },
   {
     type: 'input',
-    name: 'idManager',
+    name: 'id',
     message: `What is the manager's id number?`,
   },
   {
     type: 'input',
-    name: 'idManager',
-    message: "What is the manager's id number?",
-  },
-  {
-    type: 'input',
-    name: 'emailManager',
+    name: 'email',
     message: "What is the manager's email address?",
   },
   {
     type: 'input',
-    name: 'officeManager',
+    name: 'office',
     message: "What is the manager's office number?",
   },
 ])
@@ -35,22 +30,17 @@ function addEngineer() {
   inquirer.prompt ([
   {
     type: 'input',
-    name: 'nameEngineer',
+    name: 'name',
     message: 'What is the name of the engineer?'
   },
   {
     type: 'input',
-    name: 'idEngineer',
+    name: 'id',
     message: `What is the engineer's id number?`,
   },
   {
     type: 'input',
-    name: 'idEngineer',
-    message: "What is the engineer's id number?",
-  },
-  {
-    type: 'input',
-    name: 'emailEngineer',
+    name: 'email',
     message: "What is the engineer's email address?",
   },
   {
@@ -65,28 +55,23 @@ function addIntern() {
   inquirer.prompt ([
   {
     type: 'input',
-    name: 'nameIntern',
+    name: 'name',
     message: 'What is the name of the Intern?'
   },
   {
     type: 'input',
-    name: 'idIntern',
+    name: 'id',
     message: `What is the Intern's id number?`,
   },
   {
     type: 'input',
-    name: 'idIntern',
-    message: "What is the Intern's id number?",
-  },
-  {
-    type: 'input',
-    name: 'emailIntern',
+    name: 'email',
     message: "What is the Intern's email address?",
   },
   {
     type: 'input',
-    name: 'emailInten',
-    message: "Which school is the intern from?",
+    name: 'school',
+    message: "Which school does the intern attend?",
   },
 ])
 }
