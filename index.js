@@ -1,6 +1,11 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
+//pulls the classes
+const Manager = require("./lib/Manager.js");
+const Engineer = require("./lib/Engineer.js");
+const Intern = require("./lib/Intern.js");
+
 function addManager() {
   inquirer.prompt ([
   {
@@ -11,7 +16,7 @@ function addManager() {
   {
     type: 'input',
     name: 'id',
-    message: `What is the manager's id number?`,
+    message:" What is the manager's id number?",
   },
   {
     type: 'input',
@@ -75,3 +80,6 @@ function addIntern() {
   },
 ])
 }
+
+// const runStartQuestions = require('./src/runQuestions');
+// runStartQuestions();
