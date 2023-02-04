@@ -21,5 +21,5 @@ describe('Intern', () => {
     expect(obj.getId()).toEqual(id);
     expect(obj.getEmail()).toEqual(email);
     expect(obj.getRole()).toEqual(role);
-    })
-})
+    });
+});

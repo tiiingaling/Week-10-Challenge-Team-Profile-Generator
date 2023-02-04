@@ -22,5 +22,5 @@ describe('Engineer', () => {
     expect(obj.getEmail()).toEqual(email);
     expect(obj.getGithub()).toEqual(github);
     expect(obj.getRole()).toEqual(role);
-    })
-})
+    });
+});
