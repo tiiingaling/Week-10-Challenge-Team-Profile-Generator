@@ -1,21 +1,40 @@
 const inquirer = require("inquirer")
 
-//pulls the classes
-const Manager = require("./lib/Manager.js");
-const Engineer = require("./lib/Engineer.js");
-const Intern = require("./lib/Intern.js");
+
+const mainQuestions = () => {
+    listQuestions()
+    .then((response) => {
+        switch(response.choice) {
+            case 'Manager':
+                addManager()
+            break;
+
+            case 'Engineer':
+                addEngineer()
+            break;
+            
+            case 'Intern':
+                addIntern()
+            break;
+
+            case 'Finish building team':
+                buildTeam(Manager,Engineer,Intern)
+            break;
+        }  
+    })
+}
 
 const listQuestions = () => {
     inquirer
     .prompt({
             type: 'list',
-            name: 'which employee',
+            name: 'choice',
             message: 'What employee would you like to add?',
             choices: [
                         'Manager',
                         'Engineer',
                         'Intern',
-                        'Finish team'
+                        'Finish building team'
                     ],
             },)
     }
