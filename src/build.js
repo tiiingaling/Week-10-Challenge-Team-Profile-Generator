@@ -31,7 +31,7 @@ const buildTeam = (managers,engineers,interns) => {
                 <h3>${engineer.name}</h3>
                 <p>Employee ID #: ${engineer.id}</p>
                 <p>Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
-                <p>Github: <a href="https://github.com/${manager.email}">${engineer.github}</a></p>
+                <p>Github: <a href="https://github.com/${engineer.github}">${engineer.github}</a></p>
             </div>
         </div>`;
         })
