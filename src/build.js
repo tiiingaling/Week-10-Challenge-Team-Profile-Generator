@@ -1,10 +1,5 @@
 const fs = require('fs');
 
-//pulls the classes
-const Manager = require("./lib/Manager.js");
-const Engineer = require("./lib/Engineer.js");
-const Intern = require("./lib/Intern.js");
-
 const buildTeam = (managers,engineers,interns) => {
     // pulls the template file to use
     let html = fs.readFileSync('./template/index.html');
@@ -54,9 +49,9 @@ const buildTeam = (managers,engineers,interns) => {
     }
 
     // replaces the placeholders with the above data
-    html = html.replace(`<!--MANAGER-->`, manager.Html)
-    html = html.replace(`<!--ENGINEER-->`, engineer.Html)
-    html = html.replace(`<!--INTERN-->`, intern.Html)
+    html = html.replace(`<!--MANAGER-->`, managerHtml)
+    html = html.replace(`<!--ENGINEER-->`, engineerHtml)
+    html = html.replace(`<!--INTERN-->`, internHtml)
 
     fs.writeFileSync('./dist/team.html', html)
 

@@ -1,14 +1,29 @@
 const inquirer = require("inquirer");
 const buildTeam = require('./build')
 
-manager = [];
-engineer = [];
-intern = [];
+const Manager = require('../lib/Manager');
+const Engineer = require("../lib/Engineer");
+const Intern = require("../lib/Intern");
+
+managers = [];
+engineers = [];
+interns = [];
 
 const mainQuestions = () => {
     // runs through the main list
-    listQuestions()
-    .then((response) => {
+    inquirer
+    .prompt([{
+            type: 'list',
+            name: 'choice',
+            message: 'What employee would you like to add?',
+            choices: [
+                        'Manager',
+                        'Engineer',
+                        'Intern',
+                        'Finish building team'
+                    ],
+            }])
+     .then((response) => {
         // runs through the relevant questions depending on response
         switch(response.choice) {
             case 'Manager':
@@ -24,26 +39,11 @@ const mainQuestions = () => {
             break;
 
             case 'Finish building team':
-                buildTeam(Manager,Engineer,Intern)
+                buildTeam(managers,engineers,interns)
             break;
         }  
     })
 }
-
-const listQuestions = () => {
-    inquirer
-    .prompt({
-            type: 'list',
-            name: 'choice',
-            message: 'What employee would you like to add?',
-            choices: [
-                        'Manager',
-                        'Engineer',
-                        'Intern',
-                        'Finish building team'
-                    ],
-            },)
-    }
 
 function addManager() {
     inquirer
@@ -137,7 +137,7 @@ function addManager() {
   ])
   .then ((response) => {
     // creates a new employee with the responses from the questions above
-    engineer = new Engineer(response.id, response.name, response.email, response.school);
+    intern = new Intern(response.id, response.name, response.email, response.school);
     // pushes the new data to the empty array
     interns.push(intern);
     //loops back to the main questions
@@ -145,4 +145,6 @@ function addManager() {
   })
   }
 
-  mainQuestions()
+  // mainQuestions()
+
+  module.exports = mainQuestions;
