@@ -56,7 +56,7 @@ function addManager() {
     {
       type: 'input',
       name: 'id',
-      message:" What is the manager's id number?",
+      message:"What is the manager's id number?",
     },
     {
       type: 'input',
