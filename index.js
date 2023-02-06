@@ -1,4 +1,4 @@
 //calls the questions script
-const runStartQuestions = require('./src/runQuestions');
+const runQuestions = require('./src/runQuestions');
 
-runStartQuestions();
+runQuestions();

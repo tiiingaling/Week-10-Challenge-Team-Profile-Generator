@@ -1,5 +1,9 @@
 const inquirer = require("inquirer")
+const buildTeam = require('./build')
 
+manager = [];
+engineer = [];
+intern = [];
 
 const mainQuestions = () => {
     listQuestions()
@@ -40,7 +44,8 @@ const listQuestions = () => {
     }
 
 function addManager() {
-    inquirer.prompt ([
+    inquirer
+    .prompt ([
     {
       type: 'input',
       name: 'name',
@@ -58,10 +63,17 @@ function addManager() {
     },
     {
       type: 'input',
-      name: 'office',
+      name: 'officeNumber',
       message: "What is the manager's office number?",
     },
   ])
+  .then ((response) => {
+    manager = new Manager(response.id, response.name, response.email, response.officeNumber);
+
+    managers.push(manager);
+
+    mainQuestions();
+  })
   }
   
   function addEngineer() {
@@ -113,6 +125,5 @@ function addManager() {
     },
   ])
   }
-const addManager = () => {}
-const addEngineer = () => {}
-const addIntern = () => {}
+
+  mainQuestions()
