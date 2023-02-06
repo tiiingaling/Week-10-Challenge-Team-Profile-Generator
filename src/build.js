@@ -51,6 +51,16 @@ const buildTeam = (managers,engineers,interns) => {
              </div>
          </div>`;
          })
-
     }
+
+    // replaces the placeholders with the above data
+    html = html.replace(`<!--MANAGER-->`, manager.Html)
+    html = html.replace(`<!--ENGINEER-->`, engineer.Html)
+    html = html.replace(`<!--INTERN-->`, intern.Html)
+
+    fs.writeFileSync('./dist/team.html', html)
+
+    console.log('team built!')
 }
+
+module.exports = buildTeam
