@@ -1,4 +1,4 @@
-const inquirer = require("inquirer")
+const inquirer = require("inquirer");
 const buildTeam = require('./build')
 
 manager = [];
@@ -6,8 +6,10 @@ engineer = [];
 intern = [];
 
 const mainQuestions = () => {
+    // runs through the main list
     listQuestions()
     .then((response) => {
+        // runs through the relevant questions depending on response
         switch(response.choice) {
             case 'Manager':
                 addManager()
@@ -68,10 +70,11 @@ function addManager() {
     },
   ])
   .then ((response) => {
+    // creates a new manager with the responses from the questions above
     manager = new Manager(response.id, response.name, response.email, response.officeNumber);
-
+    // pushes the new data to the empty array
     managers.push(manager);
-
+    //loops back to the main questions
     mainQuestions();
   })
   }
@@ -99,7 +102,15 @@ function addManager() {
       message: "What is the engineer's GitHub username?",
     },
   ])
-  }
+  .then ((response) => {
+    // creates a new employee with the responses from the questions above
+    engineer = new Engineer(response.id, response.name, response.email, response.github);
+    // pushes the new data to the empty array
+    engineers.push(engineer);
+    //loops back to the main questions
+    mainQuestions();
+  })
+}
   
   function addIntern() {
     inquirer.prompt ([
@@ -124,6 +135,14 @@ function addManager() {
       message: "Which school does the intern attend?",
     },
   ])
+  .then ((response) => {
+    // creates a new employee with the responses from the questions above
+    engineer = new Engineer(response.id, response.name, response.email, response.school);
+    // pushes the new data to the empty array
+    interns.push(intern);
+    //loops back to the main questions
+    mainQuestions();
+  })
   }
 
   mainQuestions()
